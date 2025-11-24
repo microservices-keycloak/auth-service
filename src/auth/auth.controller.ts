@@ -13,23 +13,4 @@ export class AuthController {
     return await this.authService.login(loginDto);
   }
 
-  @MessagePattern('findAllAuth')
-  findAll() {
-    return this.authService.findAll();
-  }
-
-  @MessagePattern('findOneAuth')
-  findOne(@Payload() id: number) {
-    return this.authService.findOne(id);
-  }
-
-  @MessagePattern('updateAuth')
-  update(@Payload() updateAuthDto: UpdateAuthDto) {
-    return this.authService.update(updateAuthDto.id, updateAuthDto);
-  }
-
-  @MessagePattern('removeAuth')
-  remove(@Payload() id: number) {
-    return this.authService.remove(id);
-  }
 }
